@@ -27,7 +27,7 @@ body, html {
 	color: white;
 }
 .right-content, .left-content {
-	max-width: 600px;
+	max-width: 3600px;
 	padding: 40px;
 }
 .right-content {
