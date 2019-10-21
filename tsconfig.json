@@ -20,7 +20,8 @@
     "noImplicitAny": false,
     "outDir": "./build/",
     "sourceMap": true,
-    "noEmit": true
+    "noEmit": true,
+    "experimentalDecorators":true
   },
   "include": [
     "src"

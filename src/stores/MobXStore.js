@@ -1,13 +1,18 @@
+import { observable, computed } from "mobx";
 
+class ObservableTodoStore {
+  @observable todos = [];
+  @observable pendingRequests = 0;
 
-class TodoStore {
-  todos = [];
+  constructor() {
+    mobx.autorun(() => console.log(this.report));
+  }
 
-  get completedTodosCount() {
+  @computed get completedTodosCount() {
     return this.todos.filter(todo => todo.completed === true).length;
   }
 
-  report() {
+  @computed get report() {
     if (this.todos.length === 0) return "<none>";
     return (
       `Next todo: "${this.todos[0].task}". ` +
@@ -24,4 +29,4 @@ class TodoStore {
   }
 }
 
-const todoStore = new TodoStore();
+const observableTodoStore = new ObservableTodoStore();

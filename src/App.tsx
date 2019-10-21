@@ -13,6 +13,8 @@ import './assets/Style.css';
 
 
 import VirginCode from './VirginCode';
+import MobXCode from './MobXCode';
+
 export function readTextFile(file, callBack) {
   var rawFile = new XMLHttpRequest();
   rawFile.open("GET", file, false);
@@ -102,7 +104,7 @@ const App: React.FC = () => {
                               <VirginCode setResultValue={setResultValue} />
                             </Route>
                             <Route path="/mobx">
-                              <VirginCode setResultValue={setResultValue} />
+                              <MobXCode setResultValue={setResultValue} />
                             </Route>
                             <Route path="/redux">
                               <VirginCode setResultValue={setResultValue} />
