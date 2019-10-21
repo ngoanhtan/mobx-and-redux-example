@@ -1,7 +1,5 @@
-import { TodoType } from "./Types";
-
 class TodoStore {
-  todos: Array<TodoType> = [];
+  todos = [];
 
   get completedTodosCount() {
     return this.todos.filter(todo => todo.completed === true).length;
@@ -15,7 +13,7 @@ class TodoStore {
     );
   }
 
-  addTodo(task: string) {
+  addTodo(task) {
     this.todos.push({
       task: task,
       completed: false,
