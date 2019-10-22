@@ -22,7 +22,7 @@ const MobXReactCode: React.FC<Props> = ({ setResultValue }) => {
   //   const [runCode, setRunCode] = useState(runCodeInit);
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/stores/MobXStore.js`)
+    fetch(`${process.env.PUBLIC_URL}/code/MobXSnippetCode.js`)
       .then(response => response.text())
       .then(text => setBasicStoreCode(text));
   }, []);
@@ -44,7 +44,6 @@ const MobXReactCode: React.FC<Props> = ({ setResultValue }) => {
   const onLoadCode = (editor: IEditorProps) => {};
 
   const renderCodeText = (text: string, onChangeCallback) => {
-    observableTodoStore.report();
     return (
       <AceEditor
         placeholder='Placeholder Text'

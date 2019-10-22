@@ -21,7 +21,7 @@ const MobXCode: React.FC<Props> = ({ setResultValue }) => {
   //   const [runCode, setRunCode] = useState(runCodeInit);
 
   useEffect(() => {
-    fetch(`${process.env.PUBLIC_URL}/stores/MobXStore.js`)
+    fetch(`${process.env.PUBLIC_URL}/code/MobXStore.js`)
       .then(response => response.text())
       .then(text => setBasicStoreCode(text));
   }, []);

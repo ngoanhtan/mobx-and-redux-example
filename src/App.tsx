@@ -9,6 +9,9 @@ import './assets/Style.css';
 import VirginCode from './VirginCode';
 import MobXCode from './MobXCode';
 import MobXReactCode from './MobXReactCode';
+import MobXSnippetCode from './MobXSnippetCode';
+
+import { observableTodoStore } from './stores/MobXStore';
 
 export function readTextFile(file, callBack) {
   var rawFile = new XMLHttpRequest();
@@ -55,6 +58,7 @@ const App: React.FC = () => {
   const clearLog = () => {
     eval('console.logs.length=0');
     setResultValue([]);
+    observableTodoStore.todos = [];
   };
 
   return (
@@ -157,6 +161,10 @@ const App: React.FC = () => {
               </td>
               <td className='right'>
                 <div className='right-content'>
+                  <Route path='/mobxReact'>
+                    <MobXSnippetCode />
+                  </Route>
+
                   <h3>
                     Console log
                     <button id='clear-btn' onClick={clearLog}>
